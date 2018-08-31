@@ -51,6 +51,8 @@ type Icon
     | LockOpen
     | Add
     | Warning
+    | Check
+    | Undo
 
 
 {-| Render an icon
@@ -117,6 +119,12 @@ render icon size color =
 
         Warning ->
             renderIcon size color MaterialIcon.warning
+
+        Check ->
+            renderIcon size color MaterialIcon.check
+
+        Undo ->
+            renderIcon size color MaterialIcon.undo
 
 
 renderIcon : Int -> Color -> (Color -> Int -> Svg msg) -> Html msg
