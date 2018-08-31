@@ -79,8 +79,10 @@ selectOptionItem isDisabled isFocused =
     , height <| Css.rem 2
     , displayFlex
     , alignItems center
-    , backgroundColor (hex "f2f9fc") ? isDisabled || isFocused
-    , cursor pointer
+    , backgroundColor (hex "f2f9fc") ? (isFocused && not isDisabled)
+    , backgroundColor (hex "eee") ? isDisabled
+    , color (hex "aaa") ? isDisabled
+    , cursor <| if isDisabled then notAllowed else pointer
     , outlineWidth <| px 0
     , hover
         [ backgroundColor (hex "f2f9fc") ? not isDisabled

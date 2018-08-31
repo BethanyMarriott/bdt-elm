@@ -22136,10 +22136,16 @@ var _bluedogtraining$bdt_elm$Icon$render = F3(
 				return A3(_bluedogtraining$bdt_elm$Icon$renderIcon, size, color, _elm_community$elm_material_icons$Material_Icons_Action$lock_open);
 			case 'Add':
 				return A3(_bluedogtraining$bdt_elm$Icon$renderIcon, size, color, _elm_community$elm_material_icons$Material_Icons_Content$add);
-			default:
+			case 'Warning':
 				return A3(_bluedogtraining$bdt_elm$Icon$renderIcon, size, color, _elm_community$elm_material_icons$Material_Icons_Alert$warning);
+			case 'Check':
+				return A3(_bluedogtraining$bdt_elm$Icon$renderIcon, size, color, _elm_community$elm_material_icons$Material_Icons_Navigation$check);
+			default:
+				return A3(_bluedogtraining$bdt_elm$Icon$renderIcon, size, color, _elm_community$elm_material_icons$Material_Icons_Content$undo);
 		}
 	});
+var _bluedogtraining$bdt_elm$Icon$Undo = {ctor: 'Undo'};
+var _bluedogtraining$bdt_elm$Icon$Check = {ctor: 'Check'};
 var _bluedogtraining$bdt_elm$Icon$Warning = {ctor: 'Warning'};
 var _bluedogtraining$bdt_elm$Icon$Add = {ctor: 'Add'};
 var _bluedogtraining$bdt_elm$Icon$LockOpen = {ctor: 'LockOpen'};
@@ -25087,27 +25093,44 @@ var _bluedogtraining$bdt_elm$Form_Css$selectOptionItem = F2(
 										_bluedogtraining$bdt_elm$Css_Bdt_ops['?'],
 										_rtfeldman$elm_css$Css$backgroundColor(
 											_rtfeldman$elm_css$Css$hex('f2f9fc')),
-										isDisabled || isFocused),
+										isFocused && (!isDisabled)),
 									_1: {
 										ctor: '::',
-										_0: _rtfeldman$elm_css$Css$cursor(_rtfeldman$elm_css$Css$pointer),
+										_0: A2(
+											_bluedogtraining$bdt_elm$Css_Bdt_ops['?'],
+											_rtfeldman$elm_css$Css$backgroundColor(
+												_rtfeldman$elm_css$Css$hex('eee')),
+											isDisabled),
 										_1: {
 											ctor: '::',
-											_0: _rtfeldman$elm_css$Css$outlineWidth(
-												_rtfeldman$elm_css$Css$px(0)),
+											_0: A2(
+												_bluedogtraining$bdt_elm$Css_Bdt_ops['?'],
+												_rtfeldman$elm_css$Css$color(
+													_rtfeldman$elm_css$Css$hex('aaa')),
+												isDisabled),
 											_1: {
 												ctor: '::',
-												_0: _rtfeldman$elm_css$Css$hover(
-													{
+												_0: _rtfeldman$elm_css$Css$cursor(
+													isDisabled ? _rtfeldman$elm_css$Css$notAllowed : _rtfeldman$elm_css$Css$pointer),
+												_1: {
+													ctor: '::',
+													_0: _rtfeldman$elm_css$Css$outlineWidth(
+														_rtfeldman$elm_css$Css$px(0)),
+													_1: {
 														ctor: '::',
-														_0: A2(
-															_bluedogtraining$bdt_elm$Css_Bdt_ops['?'],
-															_rtfeldman$elm_css$Css$backgroundColor(
-																_rtfeldman$elm_css$Css$hex('f2f9fc')),
-															!isDisabled),
+														_0: _rtfeldman$elm_css$Css$hover(
+															{
+																ctor: '::',
+																_0: A2(
+																	_bluedogtraining$bdt_elm$Css_Bdt_ops['?'],
+																	_rtfeldman$elm_css$Css$backgroundColor(
+																		_rtfeldman$elm_css$Css$hex('f2f9fc')),
+																	!isDisabled),
+																_1: {ctor: '[]'}
+															}),
 														_1: {ctor: '[]'}
-													}),
-												_1: {ctor: '[]'}
+													}
+												}
 											}
 										}
 									}
@@ -39935,9 +39958,15 @@ var _bluedogtraining$bdt_elm$View$view = function (model) {
 																						_bluedogtraining$bdt_elm$Form_Select$setToLabel,
 																						_bluedogtraining$bdt_elm$MusicGenre$toLabel,
 																						A2(
-																							_bluedogtraining$bdt_elm$Form_Select$setIsClearable,
-																							true,
-																							_bluedogtraining$bdt_elm$Form_Select$view(model.select))))),
+																							_bluedogtraining$bdt_elm$Form_Select$setIsOptionDisabled,
+																							F2(
+																								function (x, y) {
+																									return _elm_lang$core$Native_Utils.eq(x, y);
+																								})(_bluedogtraining$bdt_elm$MusicGenre$Pop),
+																							A2(
+																								_bluedogtraining$bdt_elm$Form_Select$setIsClearable,
+																								true,
+																								_bluedogtraining$bdt_elm$Form_Select$view(model.select)))))),
 																			_1: {
 																				ctor: '::',
 																				_0: A2(
