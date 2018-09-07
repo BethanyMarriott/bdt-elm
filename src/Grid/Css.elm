@@ -67,7 +67,6 @@ defaultColSize cols =
     Media.withMedia
         [ Media.all [] ]
         [ flexBasis <| pct (100 / 12 * (SizeHelpers.colsToFloat cols))
-        , maxWidth <| pct (100 / 12 * (SizeHelpers.colsToFloat cols))
         ]
 
 
@@ -77,5 +76,4 @@ colSize (size, cols) =
     Media.withMedia
         [ Media.all <| [ Media.minWidth <| px (SizeHelpers.breakpointPxWidth size) ] ]
         [ flexBasis <| pct (100 / 12 * (SizeHelpers.colsToFloat cols))
-        , maxWidth <| pct (100 / 12 * (SizeHelpers.colsToFloat cols))
         ]

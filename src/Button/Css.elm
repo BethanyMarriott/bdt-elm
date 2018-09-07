@@ -11,7 +11,7 @@ import Color
 
 import Html.Styled.Bdt exposing ((?))
 
-import Button.Content exposing (Content (..))
+import Content exposing (Content (..))
 import Button.Size exposing (Size (..))
 
 

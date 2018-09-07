@@ -27,6 +27,8 @@ import Material.Icons.Image as MaterialIcon
 import Material.Icons.File as MaterialIcon
 import Material.Icons.Av as MaterialIcon
 import Material.Icons.Alert as MaterialIcon
+import Material.Icons.Communication as MaterialIcon
+import Material.Icons.Editor as MaterialIcon
 
 
 {-| Available Icons
@@ -53,6 +55,8 @@ type Icon
     | Warning
     | Check
     | Undo
+    | Comment
+    | BarChart
 
 
 {-| Render an icon
@@ -125,6 +129,12 @@ render icon size color =
 
         Undo ->
             renderIcon size color MaterialIcon.undo
+
+        Comment ->
+            renderIcon size color MaterialIcon.comment
+
+        BarChart ->
+            renderIcon size color MaterialIcon.insert_chart
 
 
 renderIcon : Int -> Color -> (Color -> Int -> Svg msg) -> Html msg

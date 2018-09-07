@@ -32,7 +32,7 @@ import Color exposing (Color)
 
 import Icon exposing (Icon)
 
-import Button.Content as Content exposing (..)
+import Content exposing (..)
 import Button.Size exposing (..)
 import Button.Css as Css
 

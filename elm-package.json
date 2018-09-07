@@ -37,7 +37,8 @@
         "EverySet.Bdt",
         "Dom.Scroll.Bdt",
         "StringFormatting",
-        "InfixPrecedence"
+        "InfixPrecedence",
+        "ToolTip"
     ],
     "dependencies": {
         "Gizra/elm-all-set": "1.0.0 <= v < 2.0.0",
